@@ -1,25 +1,31 @@
 import logo from './logo.svg';
+import React, {useState} from "react";
+import Flashcardlist from "./Flashcardlist";
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  
+    const question_list = [
+      {
+        question:"what is the cpacc",
+        answer:"answer a test",
+        options: ["this", "is", "a", "test"]
+      },
+      {
+        question:"what is the cpacc",
+        answer:"answer a test",
+        options: ["this", "is", "a", "test"]
+      }
+    ]
+
+    const [array, setArray] = useState(question_list);
+
+    return (
+      <div>
+        <Flashcardlist flashcards={array} />
+      </div>
+    )
+  
 }
 
 export default App;
